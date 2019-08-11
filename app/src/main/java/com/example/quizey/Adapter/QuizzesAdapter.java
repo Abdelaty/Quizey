@@ -54,7 +54,8 @@ public class QuizzesAdapter extends PagerAdapter {
         quiz_description.setText(quizzesModels.get(position).getDesc());
 
         container.addView(view, 0);
-        return super.instantiateItem(container, position);
+//        return super.instantiateItem(container, position);
+        return view;
     }
 
     @Override

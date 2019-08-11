@@ -24,15 +24,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_quiz_path);
+        viewPager = findViewById(R.id.viewpager);
 
         quizzesModels = new ArrayList<>();
-        quizzesModels.add(new QuizzesModel(R.id.background, "quiz1", "test1 test1 test1"));
-        quizzesModels.add(new QuizzesModel(R.id.background, "quiz2", "test2 test2 test2"));
-        quizzesModels.add(new QuizzesModel(R.id.background, "quiz3", "test3 test3 test3"));
-        quizzesModels.add(new QuizzesModel(R.id.background, "quiz4", "test4 test4 test4"));
+        quizzesModels.add(new QuizzesModel(R.drawable.ic_launcher_background, "quiz1", "test1 test1 test1"));
+        quizzesModels.add(new QuizzesModel(R.drawable.ic_launcher_background, "quiz2", "test2 test2 test2"));
+        quizzesModels.add(new QuizzesModel(R.drawable.ic_launcher_background, "quiz3", "test3 test3 test3"));
+        quizzesModels.add(new QuizzesModel(R.drawable.ic_launcher_background, "quiz4", "test4 test4 test4"));
 
         quizzesAdapter = new QuizzesAdapter(quizzesModels, this);
-        viewPager.findViewById(R.id.viewpager);
         viewPager.setAdapter(quizzesAdapter);
         viewPager.setPadding(130, 0, 130, 0);
 
@@ -48,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 if (position < (quizzesAdapter.getCount() - 1) && position < (colors.length - 1)) {
-                    viewPager.setBackgroundResource(
+                    viewPager.setBackgroundColor(
+
                             (Integer) argbEvaluator.evaluate(
                                     positionOffset,
                                     colors[position],
