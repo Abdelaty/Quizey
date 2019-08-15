@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_congrats);
+        setContentView(R.layout.quiz_list_vp);
         viewPager = findViewById(R.id.viewpager);
         konfettiView = findViewById(R.id.celebr_view);
         quizzesModels = new ArrayList<>();
