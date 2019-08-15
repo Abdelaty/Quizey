@@ -12,6 +12,8 @@ import com.example.quizey.Model.QuizzesModel;
 import java.util.ArrayList;
 import java.util.List;
 
+import nl.dionsegijn.konfetti.KonfettiView;
+
 public class MainActivity extends AppCompatActivity {
 
     ViewPager viewPager;
@@ -19,13 +21,14 @@ public class MainActivity extends AppCompatActivity {
     List<QuizzesModel> quizzesModels;
     Integer[] colors = null;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
+    KonfettiView konfettiView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_quiz_path);
+        setContentView(R.layout.fragment_congrats);
         viewPager = findViewById(R.id.viewpager);
-
+        konfettiView = findViewById(R.id.celebr_view);
         quizzesModels = new ArrayList<>();
         quizzesModels.add(new QuizzesModel(R.drawable.ic_launcher_background, "quiz1", "test1 test1 test1"));
         quizzesModels.add(new QuizzesModel(R.drawable.ic_launcher_background, "quiz2", "test2 test2 test2"));
@@ -71,6 +74,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+//        konfettiView.build()
+//                .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA)
+//                .setDirection(0.0, 359.0)
+//                .setSpeed(1f, 5f)
+//                .setFadeOutEnabled(true)
+//                .setTimeToLive(2000L)
+//                .addShapes(Shape.RECT, Shape.CIRCLE)
+//                .addSizes(new Size(12, 5))
+//                .setPosition(-50f, konfettiView.getWidth() + 50f, -50f, -50f)
+//                .streamFor(300, 5000L);
     }
 }
